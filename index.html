@@ -106,9 +106,9 @@
     <div id="status">集中タイム</div>
 
     <select id="bgmSelect">
-      <option value="focus.mp3">Lo-Fi集中</option>
-      <option value="piano.mp3">ピアノ静音</option>
-      <option value="nature.mp3">自然音</option>
+      <option value="focus.mp3">focus</option>
+      <option value="piano.mp3">piano</option>
+      <option value="nature.mp3">nature</option>
     </select>
 
     <div>
@@ -199,62 +199,6 @@
       document.body.style.background = "linear-gradient(-45deg, #5C258D, #4389A2, #6a11cb, #2575fc)";
       fadeOutAudio(audio);
     }
-  </script>
-</body>
-</html>
-
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <title>Focus Timer</title>
-  <style>
-    body {
-      font-family: sans-serif;
-      background: linear-gradient(135deg, #89f7fe, #66a6ff);
-      text-align: center;
-      padding: 50px;
-      color: white;
-    }
-    select, button {
-      padding: 10px;
-      font-size: 16px;
-      border-radius: 8px;
-      border: none;
-    }
-  </style>
-</head>
-<body>
-  <h1>🎵 Focus Timer</h1>
-
-  <select id="musicSelect">
-    <option value="music/focus.mp3">Focus</option>
-    <option value="music/piano.mp3">Piano</option>
-    <option value="music/nature.mp3">Nature</option>
-  </select>
-
-  <button id="startBtn">▶ スタート</button>
-
-  <audio id="audio" loop></audio>
-
-  <script>
-    const audio = document.getElementById('audio');
-    const select = document.getElementById('musicSelect');
-    const startBtn = document.getElementById('startBtn');
-
-    // 音楽を切り替える
-    function changeBgm() {
-      audio.src = select.value;
-    }
-
-    // スタートボタンを押したら音楽再生
-    startBtn.addEventListener('click', () => {
-      changeBgm();
-      audio.play().catch(err => console.log('再生エラー:', err));
-    });
-
-    // 曲の変更時に切り替え
-    select.addEventListener('change', changeBgm);
   </script>
 </body>
 </html>
